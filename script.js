@@ -2,7 +2,8 @@ let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector("#reset-btn");
 let newgame = document.querySelector("#new-btn");
 let msgcontainer = document.querySelector(".msg-cont");
-let msg = document.querySelector(".msg");
+let msg1 = document.querySelector(".msg1");
+let msg2 = document.querySelector(".msg2");
 
 let turnO = true;
 
@@ -54,12 +55,15 @@ const enableBoxes = () => {
 }
 
 const showWinner = (winner) => {
-    msg.innerText = `Congractulations, Winner is ${winner}`
+    msg1.innerText = `Congractulations`
+    msg2.classList.remove("hide");
+    msg2.innerText = `Winner is ${winner}`
     msgcontainer.classList.remove("hide");
     disableBoxes();
 };
 const draw = () => {
-    msg.innerText = `Draw!`
+    msg1.innerText = `Draw!`
+    msg2.classList.add("hide");
     msgcontainer.classList.remove("hide");
     disableBoxes();
 };
